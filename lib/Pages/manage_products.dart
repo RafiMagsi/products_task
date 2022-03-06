@@ -37,6 +37,7 @@ class ManageProducts extends GetView<ProductsController> {
               child: controller.productsList.isNotEmpty
                   ? Obx(
                       () => ListView.builder(
+                          padding: EdgeInsets.only(bottom: AppSizes.buttonHeight_2 * 2),
                           itemCount: controller.productsList.length,
                           itemBuilder: (BuildContext context, int index) {
                             ProductModel product = controller.productsList.elementAt(index);

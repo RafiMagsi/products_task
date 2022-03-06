@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:products_task/Configs/app_colors.dart';
+import 'package:products_task/Configs/text_styles.dart';
 
 // Custom AppBar class
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -21,7 +22,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 )
               : SizedBox(),
           backgroundColor: AppColors.background,
-          title: Text(title ?? "", style: TextStyle(color: AppColors.textBlack)),
+          title: Text(title ?? "", style: AppStyles.titleStyle().copyWith(fontSize: 20, fontWeight: FontWeight.bold)),
           centerTitle: true,
           automaticallyImplyLeading: false,
           titleSpacing: 0,

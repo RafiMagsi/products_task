@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:products_task/Configs/app_colors.dart';
 import 'package:products_task/Configs/app_sizes.dart';
+import 'package:products_task/Configs/app_strings.dart';
+import 'package:products_task/Configs/text_styles.dart';
 import 'package:products_task/Controllers/add_product_controller.dart';
 import 'package:products_task/Widgets/custom_app_bar.dart';
 import 'package:get/get.dart';
@@ -39,6 +42,8 @@ class AddProduct extends GetView<AddProductController> {
                 CustomTextField(
                   placeHolder: "Product Price",
                   inputController: controller.priceController,
+                  suffix: Text(AppStrings.currency, style: AppStyles.hintStyle()),
+                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                 ),
                 Obx(
                   () => CustomButton(
