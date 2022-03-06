@@ -20,24 +20,26 @@ class CustomTextField extends StatelessWidget {
   final TextInputType? textInputType;
   final FocusNode? focusNode;
   final Function(String)? onSubmitted;
+  final bool? autoValidate;
 
-  const CustomTextField(
-      {Key? key,
-      this.onChanged,
-      this.disableInteraction = false,
-      this.validator,
-      this.errorText,
-      this.inputController,
-      this.inputFormatters,
-      this.decoration,
-      this.placeHolder,
-      this.title,
-      this.suffix,
-      this.maxLength = 100,
-      this.textInputType,
-      this.focusNode,
-      this.onSubmitted})
-      : super(key: key);
+  const CustomTextField({
+    Key? key,
+    this.onChanged,
+    this.disableInteraction = false,
+    this.validator,
+    this.errorText,
+    this.inputController,
+    this.inputFormatters,
+    this.decoration,
+    this.placeHolder,
+    this.title,
+    this.suffix,
+    this.maxLength = 100,
+    this.textInputType,
+    this.focusNode,
+    this.onSubmitted,
+    this.autoValidate = true,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +62,7 @@ class CustomTextField extends StatelessWidget {
               return validator!(x!);
             }
           },
-          autovalidateMode: AutovalidateMode.onUserInteraction,
+          autovalidateMode: autoValidate! ? AutovalidateMode.onUserInteraction : null,
           controller: inputController,
           inputFormatters: inputFormatters,
           autocorrect: false,

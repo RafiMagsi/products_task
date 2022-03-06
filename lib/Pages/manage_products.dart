@@ -6,6 +6,8 @@ import 'package:products_task/Controllers/products_controller.dart';
 import 'package:products_task/Models/product_model.dart';
 import 'package:products_task/Widgets/custom_app_bar.dart';
 import 'package:products_task/Widgets/custom_button.dart';
+import 'package:products_task/Widgets/custom_text_field.dart';
+import 'package:products_task/Widgets/empty_message.dart';
 import 'package:products_task/Widgets/product_item.dart';
 import 'package:get/get.dart';
 
@@ -27,25 +29,38 @@ class ManageProducts extends GetView<ProductsController> {
       appBar: CustomAppBar(title: "Manage Products", rootPage: true),
       body: Stack(
         children: [
-          RefreshIndicator(
-            onRefresh: () {
-              return controller.getProducts();
-            },
-            child: Container(
-              decoration: BoxDecoration(color: AppColors.background),
-              padding: EdgeInsets.symmetric(horizontal: AppSizes.pagePadding),
-              child: controller.productsList.isNotEmpty
-                  ? Obx(
-                      () => ListView.builder(
-                          padding: EdgeInsets.only(bottom: AppSizes.buttonHeight_2 * 2),
-                          itemCount: controller.productsList.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            ProductModel product = controller.productsList.elementAt(index);
-                            return ProductItem(product: product);
-                          }),
-                    )
-                  : EmptyMessage(),
-            ),
+          Column(
+            children: [
+              CustomTextField(
+                placeHolder: "Search Products",
+                inputController: controller.searchController,
+                autoValidate: false,
+              ),
+              Expanded(
+                child: RefreshIndicator(
+                  onRefresh: () {
+                    return controller.getProducts();
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(color: AppColors.background),
+                    padding: EdgeInsets.symmetric(horizontal: AppSizes.pagePadding),
+                    child: controller.productsList.isNotEmpty
+                        ? Obx(
+                            () => ListView.builder(
+                                shrinkWrap: true,
+                                physics: AlwaysScrollableScrollPhysics(),
+                                padding: EdgeInsets.only(bottom: AppSizes.buttonHeight_2 * 2),
+                                itemCount: controller.productsList.length,
+                                itemBuilder: (BuildContext context, int index) {
+                                  ProductModel product = controller.productsList.elementAt(index);
+                                  return ProductItem(product: product);
+                                }),
+                          )
+                        : EmptyMessage(),
+                  ),
+                ),
+              ),
+            ],
           ),
           Positioned(
             bottom: AppSizes.largeSpacing_2,
@@ -59,14 +74,5 @@ class ManageProducts extends GetView<ProductsController> {
         ],
       ),
     );
-  }
-}
-
-class EmptyMessage extends StatelessWidget {
-  const EmptyMessage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(child: Card(elevation: 8, child: Center(child: Text("No products found"))));
   }
 }

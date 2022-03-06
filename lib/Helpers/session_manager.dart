@@ -14,7 +14,7 @@ class SessionManager extends GetxController {
     );
   }
 
-  List<ProductModel>? getProducts() {
+  Future<List<ProductModel>?> getProducts() async {
     List<ProductModel> products;
     var productJson = StorageManager.getString(StorageManager.products);
     if (productJson.isEmpty) return null;

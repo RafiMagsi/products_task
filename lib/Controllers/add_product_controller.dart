@@ -22,10 +22,10 @@ class AddProductController extends GetxController {
     priceController.addListener(checkButton);
   }
 
-  void submitProduct() {
+  Future<void> submitProduct() async {
     if (productForm.currentState!.validate()) {
       var session = SessionManager();
-      var products = session.getProducts();
+      var products = await session.getProducts();
       products ??= <ProductModel>[];
 
       var product = ProductModel(

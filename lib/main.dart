@@ -15,60 +15,69 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'Manage Products',
-      theme: ThemeData(
-        dividerColor: Colors.transparent,
-        dividerTheme: DividerThemeData(
-          color: Colors.grey[200],
-        ),
-        primaryColor: AppColors.primary,
-        brightness: Brightness.light,
-        backgroundColor: AppColors.white,
-        progressIndicatorTheme: const ProgressIndicatorThemeData(
-          color: AppColors.primary,
-        ),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        fontFamily: 'Cairo',
-        canvasColor: AppColors.white,
-        cardColor: Colors.white,
-        iconTheme: const IconThemeData(
-          color: AppColors.textBlack,
-          size: 25,
-        ),
-        appBarTheme: const AppBarTheme(
-          centerTitle: false, // 1
-          iconTheme: IconThemeData(
-            color: AppColors.textBlack,
-            size: 22,
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: () {
+        FocusScopeNode currentFocus = FocusScope.of(context);
+        if (!currentFocus.hasPrimaryFocus && currentFocus.focusedChild != null) {
+          FocusManager.instance.primaryFocus?.unfocus();
+        }
+      },
+      child: GetMaterialApp(
+        title: 'Manage Products',
+        theme: ThemeData(
+          dividerColor: Colors.transparent,
+          dividerTheme: DividerThemeData(
+            color: Colors.grey[200],
           ),
-          actionsIconTheme: IconThemeData(
-            color: AppColors.textBlack,
-            size: 22,
+          primaryColor: AppColors.primary,
+          brightness: Brightness.light,
+          backgroundColor: AppColors.white,
+          progressIndicatorTheme: const ProgressIndicatorThemeData(
+            color: AppColors.primary,
           ),
-          color: Colors.white,
-          elevation: 0, systemOverlayStyle: SystemUiOverlayStyle.light,
-        ),
-        textSelectionTheme: const TextSelectionThemeData(
-          cursorColor: AppColors.primary,
-        ),
-        inputDecorationTheme: const InputDecorationTheme(
-          enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(
-              color: AppColors.inputBorderColor,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+          fontFamily: 'Cairo',
+          canvasColor: AppColors.white,
+          cardColor: Colors.white,
+          iconTheme: const IconThemeData(
+            color: AppColors.textBlack,
+            size: 25,
+          ),
+          appBarTheme: const AppBarTheme(
+            centerTitle: false, // 1
+            iconTheme: IconThemeData(
+              color: AppColors.textBlack,
+              size: 22,
+            ),
+            actionsIconTheme: IconThemeData(
+              color: AppColors.textBlack,
+              size: 22,
+            ),
+            color: Colors.white,
+            elevation: 0, systemOverlayStyle: SystemUiOverlayStyle.light,
+          ),
+          textSelectionTheme: const TextSelectionThemeData(
+            cursorColor: AppColors.primary,
+          ),
+          inputDecorationTheme: const InputDecorationTheme(
+            enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: AppColors.inputBorderColor,
+              ),
+            ),
+            focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: AppColors.primary,
+              ),
             ),
           ),
-          focusedBorder: UnderlineInputBorder(
-            borderSide: BorderSide(
-              color: AppColors.primary,
-            ),
-          ),
         ),
+        debugShowCheckedModeBanner: false,
+        initialRoute: AppPages.initial,
+        getPages: AppPages.appPages,
+        navigatorObservers: <RouteObserver<ModalRoute<void>>>[routeObserver],
       ),
-      debugShowCheckedModeBanner: false,
-      initialRoute: AppPages.initial,
-      getPages: AppPages.appPages,
-      navigatorObservers: <RouteObserver<ModalRoute<void>>>[routeObserver],
     );
   }
 }
