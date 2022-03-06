@@ -42,11 +42,11 @@ class ManageProducts extends GetView<ProductsController> {
                     return controller.getProducts();
                   },
                   child: Container(
-                    decoration: BoxDecoration(color: AppColors.background),
-                    padding: EdgeInsets.symmetric(horizontal: AppSizes.pagePadding),
-                    child: controller.productsList.isNotEmpty
-                        ? Obx(
-                            () => ListView.builder(
+                      decoration: BoxDecoration(color: AppColors.background),
+                      padding: EdgeInsets.symmetric(horizontal: AppSizes.pagePadding),
+                      child: Obx(
+                        () => controller.productsList.isNotEmpty
+                            ? ListView.builder(
                                 shrinkWrap: true,
                                 physics: AlwaysScrollableScrollPhysics(),
                                 padding: EdgeInsets.only(bottom: AppSizes.buttonHeight_2 * 2),
@@ -54,10 +54,9 @@ class ManageProducts extends GetView<ProductsController> {
                                 itemBuilder: (BuildContext context, int index) {
                                   ProductModel product = controller.productsList.elementAt(index);
                                   return ProductItem(product: product);
-                                }),
-                          )
-                        : EmptyMessage(),
-                  ),
+                                })
+                            : EmptyMessage(),
+                      )),
                 ),
               ),
             ],

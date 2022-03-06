@@ -5,6 +5,6 @@ class EmptyMessage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Card(elevation: 8, child: Center(child: Text("No products found"))));
+    return Center(child: Text("No products found"));
   }
 }
