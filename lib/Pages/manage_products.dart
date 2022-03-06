@@ -14,20 +14,37 @@ class ManageProducts extends GetView<ProductsController> {
   const ManageProducts({Key? key}) : super(key: key);
 
   @override
+  StatelessElement createElement() {
+    WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
+      controller.getProducts();
+    });
+    return super.createElement();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(title: "Manage Products", rootPage: true),
       body: Stack(
         children: [
-          Container(
-            decoration: BoxDecoration(color: AppColors.background),
-            padding: EdgeInsets.symmetric(horizontal: AppSizes.pagePadding),
-            child: ListView.builder(
-                itemCount: controller.productsList.length,
-                itemBuilder: (BuildContext context, int index) {
-                  ProductModel product = controller.productsList.elementAt(index);
-                  return ProductItem(product: product);
-                }),
+          RefreshIndicator(
+            onRefresh: () {
+              return controller.getProducts();
+            },
+            child: Container(
+              decoration: BoxDecoration(color: AppColors.background),
+              padding: EdgeInsets.symmetric(horizontal: AppSizes.pagePadding),
+              child: controller.productsList.isNotEmpty
+                  ? Obx(
+                      () => ListView.builder(
+                          itemCount: controller.productsList.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            ProductModel product = controller.productsList.elementAt(index);
+                            return ProductItem(product: product);
+                          }),
+                    )
+                  : EmptyMessage(),
+            ),
           ),
           Positioned(
             bottom: AppSizes.largeSpacing_2,
@@ -41,5 +58,14 @@ class ManageProducts extends GetView<ProductsController> {
         ],
       ),
     );
+  }
+}
+
+class EmptyMessage extends StatelessWidget {
+  const EmptyMessage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(child: Card(elevation: 8, child: Center(child: Text("No products found"))));
   }
 }

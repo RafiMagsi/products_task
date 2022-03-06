@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:products_task/Configs/app_colors.dart';
 import 'package:products_task/Configs/app_pages.dart';
 
-void main() {
+Future<void> main() async {
+  await GetStorage.init();
   runApp(const MyApp());
 }
 

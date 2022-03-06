@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:products_task/Configs/app_colors.dart';
+import 'package:products_task/Configs/app_sizes.dart';
 import 'package:products_task/Controllers/add_product_controller.dart';
 import 'package:products_task/Widgets/custom_app_bar.dart';
 import 'package:get/get.dart';
@@ -26,6 +27,7 @@ class AddProduct extends GetView<AddProductController> {
             key: controller.productForm,
             child: Column(
               children: [
+                SizedBox(height: AppSizes.xLargeSpacing),
                 CustomTextField(
                   placeHolder: "Product Name",
                   inputController: controller.nameController,
@@ -38,11 +40,16 @@ class AddProduct extends GetView<AddProductController> {
                   placeHolder: "Product Price",
                   inputController: controller.priceController,
                 ),
-                CustomButton(
-                  title: "Submit",
-                  onTap: () {
-                    controller.submitProduct();
-                  },
+                Obx(
+                  () => CustomButton(
+                    title: "Submit",
+                    enabled: controller.buttonEnabled.value,
+                    onTap: () {
+                      if (controller.buttonEnabled.value) {
+                        controller.submitProduct();
+                      }
+                    },
+                  ),
                 ),
               ],
             ),

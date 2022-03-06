@@ -76,7 +76,7 @@ class CustomTextField extends StatelessWidget {
                 disabledBorder: InputBorder.none,
                 hintText: placeHolder ?? '${'Enter'} $title',
                 hintStyle: AppStyles.hintStyle().copyWith(height: 1),
-                contentPadding: EdgeInsetsDirectional.only(top: 12, bottom: 12, start: 12),
+                contentPadding: EdgeInsetsDirectional.all(14),
                 errorStyle: AppStyles.errorTextStyle().copyWith(height: 1.2),
                 counterText: '',
                 isDense: true,

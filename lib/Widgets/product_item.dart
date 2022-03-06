@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:products_task/Configs/app_colors.dart';
 import 'package:products_task/Configs/app_sizes.dart';
+import 'package:products_task/Configs/app_strings.dart';
 import 'package:products_task/Configs/text_styles.dart';
 import 'package:products_task/Models/product_model.dart';
 
@@ -14,10 +15,14 @@ class ProductItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        color: AppColors.white,
-        borderRadius: BorderRadius.circular(AppSizes.mediumSpacing_2),
-      ),
+      decoration:
+          BoxDecoration(color: AppColors.white, borderRadius: BorderRadius.circular(AppSizes.mediumSpacing_2), boxShadow: [
+        BoxShadow(
+          color: Colors.grey.withOpacity(0.15),
+          blurRadius: 4,
+          spreadRadius: 4,
+        )
+      ]),
       padding: EdgeInsets.symmetric(vertical: AppSizes.mediumSpacing_2, horizontal: AppSizes.mediumSpacing),
       margin: EdgeInsets.all(AppSizes.mediumSpacing),
       child: Column(
@@ -36,7 +41,7 @@ class ProductItem extends StatelessWidget {
             style: AppStyles.subTitleStyle(),
           ),
           Text(
-            product!.price!.toString(),
+            product!.price!.toString() + " " + AppStrings.currency,
             textAlign: TextAlign.start,
             style: AppStyles.priceStyle(),
           ),
