@@ -10,4 +10,5 @@ class AppColors {
   static const Color inputBorderColor = Color(0xFFFD7272); // Border color
   static const Color background = Color(0xFFF9F9F9);
   static const Color error = Color(0xFFD94F4F);
+  static const Color popup = Color(0xFF08B43D);
 }

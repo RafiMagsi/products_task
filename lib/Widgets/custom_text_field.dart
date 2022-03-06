@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:products_task/Configs/app_colors.dart';
 import 'package:products_task/Configs/app_sizes.dart';
 import 'package:products_task/Configs/text_styles.dart';
-import 'package:products_task/Helpers/Validators.dart';
+import 'package:products_task/Helpers/validators.dart';
 
 class CustomTextField extends StatelessWidget {
   final bool? disableInteraction;
