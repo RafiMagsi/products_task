@@ -37,4 +37,24 @@ class AppStyles {
       height: height,
     );
   }
+
+  static TextStyle hintStyle({
+    Color color = AppColors.hintColor,
+  }) {
+    return TextStyle(
+      color: color,
+      fontSize: 16,
+      fontWeight: FontWeight.bold,
+      letterSpacing: 0.03,
+    );
+  }
+
+  static TextStyle errorTextStyle() {
+    return TextStyle(
+      color: AppColors.error,
+      fontSize: 14,
+      letterSpacing: 0.03,
+      height: 0.8,
+    );
+  }
 }
