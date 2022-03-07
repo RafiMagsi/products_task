@@ -82,7 +82,7 @@ class AppTheme {
       textTheme: TextTheme(
         bodyText2: AppStyles.titleStyle(color: AppColors.textColorD).copyWith(fontSize: 14),
         subtitle1: AppStyles.titleStyle(color: AppColors.textColorD),
-        subtitle2: AppStyles.subTitleStyle(color: AppColors.textColorD),
+        subtitle2: AppStyles.subTitleStyle(color: AppColors.textSubtitleD),
       ),
       dividerColor: Colors.transparent,
       scaffoldBackgroundColor: AppColors.primaryD,
@@ -124,7 +124,7 @@ class AppTheme {
       ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        hintStyle: AppStyles.hintStyle().copyWith(height: 1),
+        hintStyle: AppStyles.hintStyle(color: AppColors.textSubtitleD).copyWith(height: 1),
         labelStyle: AppStyles.titleStyle(color: AppColors.textColorD),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(AppSizes.xLargeSpacing)),
