@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:products_task/Configs/app_colors.dart';
+import 'package:get/get.dart';
 
 class AppStyles {
   static TextStyle titleStyle({
-    Color color = AppColors.textBlack,
+    Color color = AppColors.textColor,
     double height = 1.5,
   }) {
     return TextStyle(
@@ -27,7 +28,7 @@ class AppStyles {
   }
 
   static TextStyle priceStyle({
-    Color color = AppColors.primary,
+    Color color = AppColors.buttonColor,
     double height = 1.5,
   }) {
     return TextStyle(
@@ -42,7 +43,7 @@ class AppStyles {
     Color color = AppColors.hintColor,
   }) {
     return TextStyle(
-      color: color,
+      color: Get.isDarkMode ? AppColors.textSubtitle : color,
       fontSize: 16,
       fontWeight: FontWeight.bold,
       letterSpacing: 0.03,
@@ -55,6 +56,14 @@ class AppStyles {
       fontSize: 14,
       letterSpacing: 0.03,
       height: 0.8,
+    );
+  }
+
+  static BoxShadow boxShadow() {
+    return BoxShadow(
+      color: AppColors.inputBorderColor.withOpacity(Get.isDarkMode ? 0.05 : 0.15),
+      blurRadius: 4,
+      spreadRadius: 4,
     );
   }
 }

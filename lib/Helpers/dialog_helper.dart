@@ -33,7 +33,7 @@ class DialogHelper {
       title,
       message,
       forwardAnimationCurve: Curves.elasticOut,
-      backgroundColor: Colors.white,
+      backgroundColor: Get.theme.backgroundColor,
       borderRadius: 0,
       barBlur: 100,
       snackStyle: SnackStyle.FLOATING,

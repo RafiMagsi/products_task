@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:products_task/Configs/app_colors.dart';
 import 'package:products_task/Configs/app_sizes.dart';
 import 'package:products_task/Configs/app_strings.dart';
 import 'package:products_task/Configs/text_styles.dart';
@@ -23,7 +22,6 @@ class AddProduct extends GetView<AddProductController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(title: "Add Product"),
-      backgroundColor: AppColors.background,
       body: Column(
         children: [
           Form(
@@ -44,7 +42,9 @@ class AddProduct extends GetView<AddProductController> {
                   inputController: controller.priceController,
                   suffix: Text(AppStrings.currency, style: AppStyles.hintStyle()),
                   inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                  textInputType: TextInputType.number,
                 ),
+                SizedBox(height: AppSizes.largeSpacing),
                 Obx(
                   () => CustomButton(
                     title: "Submit",

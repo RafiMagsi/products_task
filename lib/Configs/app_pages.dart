@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:products_task/Bindings/manage_binding.dart';
-import 'package:products_task/Pages/add_product.dart';
-import 'package:products_task/Pages/manage_products.dart';
+import 'package:products_task/Pages/Products/add_product.dart';
+import 'package:products_task/Pages/Products/manage_products.dart';
 
 class AppPages {
   static const initial = '/manage_products';

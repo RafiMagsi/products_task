@@ -6,7 +6,7 @@ class StorageManager {
   static String isFirstLaunch = 'first_launch';
   static String products = 'products';
 
-  static bool getBool(String key) {
+  static Future<bool> getBool(String key) async {
     return _box.read(key) ?? false;
   }
 

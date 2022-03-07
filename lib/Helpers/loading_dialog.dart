@@ -21,7 +21,7 @@ class _LoadingDialogState extends State<LoadingDialog> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              CircularProgressIndicator(color: AppColors.primary),
+              CircularProgressIndicator(color: AppColors.buttonColor),
               Text(widget.loadingText ?? ''),
             ],
           ),

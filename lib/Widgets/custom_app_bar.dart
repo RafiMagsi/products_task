@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:products_task/Configs/app_colors.dart';
-import 'package:products_task/Configs/text_styles.dart';
 
 // Custom AppBar class
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -17,12 +15,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: AppBar(
           leading: !rootPage!
               ? IconButton(
-                  icon: Icon(Icons.arrow_back_ios, color: Colors.black),
+                  icon: Icon(
+                    Icons.arrow_back_ios,
+                  ),
                   onPressed: () => Navigator.of(context).pop(),
                 )
               : SizedBox(),
-          backgroundColor: AppColors.background,
-          title: Text(title ?? "", style: AppStyles.titleStyle().copyWith(fontSize: 20, fontWeight: FontWeight.bold)),
+          title: Text(title ?? ""),
           centerTitle: true,
           automaticallyImplyLeading: false,
           titleSpacing: 0,

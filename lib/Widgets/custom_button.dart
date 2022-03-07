@@ -22,15 +22,9 @@ class CustomButton extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: AppSizes.largeSpacing),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: enabled! ? AppColors.primary : AppColors.primary.withOpacity(0.5),
+          color: enabled! ? AppColors.buttonColor : AppColors.buttonColor.withOpacity(0.5),
           borderRadius: BorderRadius.circular(AppSizes.largeSpacing_2),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              blurRadius: 4,
-              spreadRadius: 4,
-            ),
-          ],
+          boxShadow: [AppStyles.boxShadow()],
         ),
         child: Text(
           title!,
