@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:products_task/Helpers/dialog_helper.dart';
 import 'package:products_task/Helpers/session_manager.dart';
+import 'package:products_task/Helpers/validators.dart';
 import 'package:products_task/Models/product_model.dart';
 
 class AddProductController extends GetxController {
@@ -45,7 +46,9 @@ class AddProductController extends GetxController {
   }
 
   checkButton() {
-    if (nameController.text.isNotEmpty && descriptionController.text.isNotEmpty && priceController.text.isNotEmpty) {
+    if (Validators.hasValidLength(nameController.text) &&
+        Validators.hasValidLength(descriptionController.text) &&
+        priceController.text.isNotEmpty) {
       buttonEnabled(true);
     } else {
       buttonEnabled(false);
