@@ -4,8 +4,8 @@ import 'package:products_task/Configs/app_sizes.dart';
 import 'package:products_task/Controllers/products_controller.dart';
 import 'package:products_task/Pages/Products/products_list.dart';
 import 'package:products_task/Widgets/Templates/page_template.dart';
+import 'package:products_task/Widgets/Templates/search_template.dart';
 import 'package:products_task/Widgets/custom_button.dart';
-import 'package:products_task/Widgets/custom_text_field.dart';
 import 'package:products_task/Widgets/empty_message.dart';
 import 'package:get/get.dart';
 
@@ -25,10 +25,10 @@ class ManageProducts extends GetView<ProductsController> {
   Widget build(BuildContext context) {
     return PageTemplate(
       pageTitle: "Manage Products",
-      header: CustomTextField(
-        placeHolder: "Search Products",
-        inputController: controller.searchController,
-        autoValidate: false,
+      header: SearchTemplate(
+        onChange: (value) {
+          controller.searchProducts(search: value);
+        },
       ),
       body: RefreshIndicator(
         onRefresh: () {

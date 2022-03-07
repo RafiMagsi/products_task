@@ -1,5 +1,4 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:products_task/Helpers/session_manager.dart';
 import 'package:products_task/Models/product_model.dart';
@@ -8,13 +7,6 @@ import 'package:products_task/Models/product_model.dart';
 class ProductsController extends GetxController {
   // List of the products
   var productsList = RxList<ProductModel>();
-  var searchController = TextEditingController();
-
-  @override
-  onInit() {
-    super.onInit();
-    searchController.addListener(searchProducts);
-  }
 
   getProducts() async {
     // Checking if there is no data then initialize an empty list
@@ -26,10 +18,9 @@ class ProductsController extends GetxController {
     productsList.value = products;
   }
 
-  searchProducts() async {
+  Future<String?> searchProducts({String? search = ""}) async {
     getProducts().then((pro) {
-      var search = searchController.text;
-      if (search.isNotEmpty) {
+      if (search!.isNotEmpty) {
         if (kDebugMode) {
           print("Searching");
         }
