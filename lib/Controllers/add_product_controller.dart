@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:products_task/Configs/app_pages.dart';
 import 'package:products_task/Helpers/dialog_helper.dart';
 import 'package:products_task/Helpers/session_manager.dart';
 import 'package:products_task/Models/product_model.dart';
@@ -40,7 +39,7 @@ class AddProductController extends GetxController {
         print("Products" + products.length.toString());
       }
 
-      Get.offAndToNamed(AppPages.initial);
+      Get.back();
       DialogHelper.showSnackBar("", "Product was added successfully");
     }
   }

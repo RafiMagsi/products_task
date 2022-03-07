@@ -56,7 +56,10 @@ class ManageProducts extends GetView<ProductsController> {
             right: 0,
             child: CustomButton(
               title: "Add Product",
-              onTap: () => Get.toNamed(AppPages.addProduct),
+              onTap: () async {
+                await Get.toNamed(AppPages.addProduct);
+                controller.getProducts();
+              },
             ),
           )
         ],
