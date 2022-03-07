@@ -26,6 +26,7 @@ class ManageProducts extends GetView<ProductsController> {
     return PageTemplate(
       pageTitle: "Manage Products",
       header: SearchTemplate(
+        controller: controller.searchTextController,
         onChange: (value) {
           controller.searchProducts(search: value);
         },
@@ -47,6 +48,7 @@ class ManageProducts extends GetView<ProductsController> {
         title: "Add Product",
         onTap: () async {
           await Get.toNamed(AppPages.addProduct);
+          controller.searchTextController.text = "";
           controller.getProducts();
         },
       ),

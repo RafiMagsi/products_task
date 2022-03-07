@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:products_task/Configs/app_pages.dart';
 import 'package:products_task/Helpers/app_theme.dart';
+import 'package:products_task/Helpers/utils.dart';
 
 Future<void> main() async {
   await GetStorage.init();
@@ -17,10 +18,7 @@ class MyApp extends StatelessWidget {
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
       onTap: () {
-        FocusScopeNode currentFocus = FocusScope.of(context);
-        if (!currentFocus.hasPrimaryFocus && currentFocus.focusedChild != null) {
-          FocusManager.instance.primaryFocus?.unfocus();
-        }
+        Utils.unFocus(context);
       },
       child: GetMaterialApp(
         title: 'Manage Products',

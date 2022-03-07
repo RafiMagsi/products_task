@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:products_task/Helpers/session_manager.dart';
@@ -7,6 +8,8 @@ import 'package:products_task/Models/product_model.dart';
 class ProductsController extends GetxController {
   // List of the products
   var productsList = RxList<ProductModel>();
+
+  var searchTextController = TextEditingController();
 
   getProducts() async {
     // Checking if there is no data then initialize an empty list
