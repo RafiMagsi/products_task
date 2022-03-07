@@ -1,5 +1,6 @@
 import 'package:get_storage/get_storage.dart';
 
+// GetX storage manager wrapper.
 class StorageManager {
   static final GetStorage _box = GetStorage();
   static String darkEnabled = 'dark_theme_enabled';

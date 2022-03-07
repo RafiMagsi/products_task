@@ -4,7 +4,7 @@ import 'package:products_task/Controllers/products_controller.dart';
 import 'package:products_task/Widgets/custom_app_bar.dart';
 import 'package:get/get.dart';
 
-// Manage products page
+// Generic page template
 class PageTemplate extends GetView<ProductsController> {
   final Widget? header;
   final Widget? body;

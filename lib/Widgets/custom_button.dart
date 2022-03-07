@@ -3,6 +3,7 @@ import 'package:products_task/Configs/app_colors.dart';
 import 'package:products_task/Configs/app_sizes.dart';
 import 'package:products_task/Configs/text_styles.dart';
 
+// Button customized to use for different purposes
 class CustomButton extends StatelessWidget {
   final String? title;
   final Function? onTap;
@@ -24,7 +25,7 @@ class CustomButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: enabled! ? AppColors.buttonColor : AppColors.buttonColor.withOpacity(0.5),
           borderRadius: BorderRadius.circular(AppSizes.largeSpacing_2),
-          boxShadow: [AppStyles.boxShadow()],
+          boxShadow: AppStyles.boxShadow(),
         ),
         child: Text(
           title!,

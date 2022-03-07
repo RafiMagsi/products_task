@@ -21,14 +21,22 @@ class ProductsController extends GetxController {
     productsList.value = products;
   }
 
+  // Search the given string in products list
   Future<String?> searchProducts({String? search = ""}) async {
     getProducts().then((pro) {
       if (search!.isNotEmpty) {
         if (kDebugMode) {
-          print("Searching");
+          print("Searching: " + search);
         }
         List<ProductModel> searchListData = <ProductModel>[];
-        searchListData = productsList.where((item) => item.name!.toLowerCase().contains(search.toLowerCase())).toList();
+        // Filter the items which matches with the name, description or price
+        searchListData = productsList.where((item) {
+          return item.name!.toLowerCase().contains(search.toLowerCase()) ||
+              item.description!.toLowerCase().contains(search.toLowerCase()) ||
+              item.price.toString().contains(search.toLowerCase());
+        }).toList();
+        // Post the filtered items to Product list
+        // GetX will updates the view to show latest results
         productsList.value = searchListData;
       }
     });

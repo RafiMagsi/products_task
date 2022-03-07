@@ -4,6 +4,7 @@ import 'package:products_task/Controllers/products_controller.dart';
 import 'package:products_task/Models/product_model.dart';
 import 'package:products_task/Widgets/product_item.dart';
 
+// List view for products
 class ProductsListView extends StatelessWidget {
   const ProductsListView({
     Key? key,
@@ -21,7 +22,7 @@ class ProductsListView extends StatelessWidget {
         itemCount: controller.productsList.length,
         itemBuilder: (BuildContext context, int index) {
           ProductModel product = controller.productsList.elementAt(index);
-          return ProductItem(product: product);
+          return ProductItem(product: product); // Product item widget
         });
   }
 }

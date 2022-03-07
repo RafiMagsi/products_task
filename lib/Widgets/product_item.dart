@@ -5,6 +5,7 @@ import 'package:products_task/Configs/text_styles.dart';
 import 'package:products_task/Models/product_model.dart';
 import 'package:get/get.dart';
 
+// Product item widget
 class ProductItem extends StatelessWidget {
   final ProductModel? product;
   const ProductItem({

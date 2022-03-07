@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:products_task/Configs/app_colors.dart';
 import 'package:get/get.dart';
 
+// Contains all the Text styles
 class AppStyles {
+  // Title or heading text style
   static TextStyle titleStyle({
     Color color = AppColors.textColor,
     double height = 1.5,
@@ -15,6 +17,7 @@ class AppStyles {
     );
   }
 
+//Sub title style
   static TextStyle subTitleStyle({
     Color color = AppColors.textSubtitle,
     double height = 1.5,
@@ -27,6 +30,7 @@ class AppStyles {
     );
   }
 
+//Price text style
   static TextStyle priceStyle({
     Color color = AppColors.buttonColor,
     double height = 1.5,
@@ -39,6 +43,7 @@ class AppStyles {
     );
   }
 
+  // Input field hint text style
   static TextStyle hintStyle({
     Color color = AppColors.hintColor,
   }) {
@@ -50,6 +55,7 @@ class AppStyles {
     );
   }
 
+  // Input field error text style
   static TextStyle errorTextStyle() {
     return TextStyle(
       color: AppColors.error,
@@ -59,11 +65,14 @@ class AppStyles {
     );
   }
 
-  static BoxShadow boxShadow() {
-    return BoxShadow(
-      color: AppColors.inputBorderColor.withOpacity(Get.isDarkMode ? 0.05 : 0.15),
-      blurRadius: 4,
-      spreadRadius: 4,
-    );
+  // Box Shadow for container
+  static List<BoxShadow> boxShadow() {
+    return [
+      BoxShadow(
+        color: Get.theme.shadowColor,
+        blurRadius: 4,
+        spreadRadius: 4,
+      )
+    ];
   }
 }

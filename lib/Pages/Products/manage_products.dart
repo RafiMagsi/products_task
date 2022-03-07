@@ -10,12 +10,16 @@ import 'package:products_task/Widgets/empty_message.dart';
 import 'package:get/get.dart';
 
 // Manage products page
+// Page template and Search Templates are used
 class ManageProducts extends GetView<ProductsController> {
   const ManageProducts({Key? key}) : super(key: key);
 
   @override
   StatelessElement createElement() {
+    // CreateElement is required to refresh data each time view appears
+    // Retrieve products from storage after completion of current frame
     WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
+      // Retrieve products from storage
       controller.getProducts();
     });
     return super.createElement();
@@ -32,6 +36,7 @@ class ManageProducts extends GetView<ProductsController> {
         },
       ),
       body: RefreshIndicator(
+        // In case data is not loaded, pull to refresh the data
         onRefresh: () {
           return controller.getProducts();
         },
@@ -39,8 +44,8 @@ class ManageProducts extends GetView<ProductsController> {
             padding: EdgeInsets.symmetric(horizontal: AppSizes.pagePadding),
             child: Obx(
               () => controller.productsList.isNotEmpty
-                  ? ProductsListView(controller: controller)
-                  : EmptyMessage(message: "No products found"),
+                  ? ProductsListView(controller: controller) // List controller for the products
+                  : EmptyMessage(message: "No products found"), // Error message
             )),
       ),
       rootPage: true,

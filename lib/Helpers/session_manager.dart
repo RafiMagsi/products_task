@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:products_task/Helpers/storage_manager.dart';
 import 'package:products_task/Models/product_model.dart';
 
+// Session manager controls the data to and from the storage
 class SessionManager extends GetxController {
   saveProducts(List<ProductModel> products) {
     StorageManager.setString(

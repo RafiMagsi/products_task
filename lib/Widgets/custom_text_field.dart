@@ -3,8 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:products_task/Configs/app_sizes.dart';
 import 'package:products_task/Configs/text_styles.dart';
 import 'package:products_task/Helpers/validators.dart';
-import 'package:get/get.dart';
 
+// Customized text field to be used for different purposes
 class CustomTextField extends StatelessWidget {
   final bool? disableInteraction;
   final String? Function(String p1)? onChanged;
@@ -45,13 +45,10 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(AppSizes.mediumSpacing_2),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(AppSizes.largeSpacing_2), boxShadow: [
-        BoxShadow(
-          color: Get.theme.shadowColor,
-          blurRadius: 4,
-          spreadRadius: 4,
-        )
-      ]),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(AppSizes.largeSpacing_2),
+        boxShadow: AppStyles.boxShadow(),
+      ),
       clipBehavior: Clip.antiAlias,
       child: TextFormField(
         enableInteractiveSelection: disableInteraction!,
@@ -80,7 +77,6 @@ class CustomTextField extends StatelessWidget {
               suffixIcon: suffix,
             ),
         maxLength: maxLength!,
-        // style: Get.textTheme.bodyText2,
         keyboardType: textInputType,
         textInputAction: TextInputAction.next,
         focusNode: focusNode,

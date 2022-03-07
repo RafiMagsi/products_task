@@ -6,6 +6,7 @@ import 'package:products_task/Helpers/app_theme.dart';
 import 'package:products_task/Helpers/utils.dart';
 
 Future<void> main() async {
+  // Initializing Get Storage
   await GetStorage.init();
   runApp(const MyApp());
 }
@@ -16,18 +17,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      // Added for Un-Focus fields and hiding keyboard
       behavior: HitTestBehavior.opaque,
       onTap: () {
         Utils.unFocus(context);
       },
       child: GetMaterialApp(
-        title: 'Manage Products',
-        theme: AppTheme.lightTheme(),
-        darkTheme: AppTheme.darkTheme(),
+        theme: AppTheme.lightTheme(), // Light theme
+        darkTheme: AppTheme.darkTheme(), //Dart theme
         debugShowCheckedModeBanner: false,
-        initialRoute: AppPages.initial,
-        getPages: AppPages.appPages,
-        navigatorObservers: <RouteObserver<ModalRoute<void>>>[routeObserver],
+        initialRoute: AppPages.initial, // Start page of the app
+        getPages: AppPages.appPages, // List of pages for Navigation
+        navigatorObservers: <RouteObserver<ModalRoute<void>>>[routeObserver], // Route observer
       ),
     );
   }

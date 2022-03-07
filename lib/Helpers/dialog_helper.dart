@@ -38,12 +38,12 @@ class DialogHelper {
       barBlur: 100,
       snackStyle: SnackStyle.FLOATING,
       maxWidth: Get.width,
-      colorText: AppColors.popup,
+      colorText: AppColors.notification,
       snackPosition: SnackPosition.TOP,
       isDismissible: true,
       messageText: Text(
         message,
-        style: AppStyles.titleStyle(color: AppColors.popup),
+        style: AppStyles.titleStyle(color: AppColors.notification),
       ),
       padding: const EdgeInsets.only(bottom: 10, top: 0),
       overlayColor: Colors.white,
@@ -52,7 +52,7 @@ class DialogHelper {
         padding: const EdgeInsets.only(top: 25.0, left: 10),
         child: Icon(
           iconData ?? Icons.done,
-          color: AppColors.popup,
+          color: AppColors.notification,
           size: 20,
         ),
       ),

@@ -9,6 +9,9 @@ import 'package:get/get.dart';
 import 'package:products_task/Widgets/custom_button.dart';
 import 'package:products_task/Widgets/custom_text_field.dart';
 
+// Ads a product to storage
+// Three fields are required to be filled to process the add feature
+// Page template and Form template are used
 class AddProduct extends GetView<AddProductController> {
   const AddProduct({Key? key}) : super(key: key);
 
@@ -44,6 +47,7 @@ class AddProduct extends GetView<AddProductController> {
         submitButton: Obx(
           () => CustomButton(
             title: "Submit",
+            // Changes the color of the button depending on the status of validation of text fields
             enabled: controller.buttonEnabled.value,
             onTap: () {
               if (controller.buttonEnabled.value) {
