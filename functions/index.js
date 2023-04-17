@@ -39,5 +39,5 @@ exports.addWelcomeMessages = functions.auth.user().onCreate(async (user) => {
 
 exports.get_products = functions.https.onRequest((request, response) => {
   functions.logger.info("Hello logs!", {structuredData: true});
-  response.send("This is Firebase Hosting Function, Implemented in Flutter Firebase Functions");
+  response.send("This is Firebase Hosting Function, Implemented in Flutter");
 });
