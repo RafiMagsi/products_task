@@ -21,6 +21,16 @@ class ProductsController extends GetxController {
     productsList.value = products;
   }
 
+  getProducts2() async {
+    // Checking if there is no data then initialize an empty list
+    var session = SessionManager();
+    var products = await session.getProducts2();
+    products ??= <ProductModel>[];
+
+    productsList.clear();
+    productsList.value = products;
+  }
+
   // Search the given string in products list
   Future<String?> searchProducts({String? search = ""}) async {
     getProducts().then((pro) {

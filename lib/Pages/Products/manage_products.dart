@@ -52,9 +52,9 @@ class ManageProducts extends GetView<ProductsController> {
       footer: CustomButton(
         title: "Add Product",
         onTap: () async {
-          await Get.toNamed(AppPages.addProduct);
-          controller.searchTextController.text = "";
-          controller.getProducts();
+          // await Get.toNamed(AppPages.addProduct);
+          // controller.searchTextController.text = "";
+          controller.getProducts2();
         },
       ),
     );
