@@ -1,7 +1,7 @@
 
-## Flutter sample for listing products from API, and Bright/Dark theme setup.
+## Flutter Parducts App
 
-A new Flutter project.
+Flutter sample for listing products from API, and Bright/Dark theme setup.
 
 ## Getting Started
 
