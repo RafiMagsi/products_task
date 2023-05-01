@@ -1,4 +1,4 @@
-# products_task
+Flutter sample for listing products from API, and Bright/Dark theme setup.
 
 A new Flutter project.
 
