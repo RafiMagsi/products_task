@@ -1,3 +1,5 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -5,7 +7,31 @@ import 'package:products_task/Configs/app_pages.dart';
 import 'package:products_task/Helpers/app_theme.dart';
 import 'package:products_task/Helpers/utils.dart';
 
-Future<void> main() async {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
+  // Check if you received the link via `getInitialLink` first
+  final PendingDynamicLinkData? initialLink = await FirebaseDynamicLinks.instance.getInitialLink();
+  if (initialLink != null) {
+    final Uri deepLink = initialLink.link;
+    // Example of using the dynamic link to push the user to a different screen
+    debugPrint(deepLink.path.toString());
+  }
+
+  FirebaseDynamicLinks.instance.onLink.listen(
+    (pendingDynamicLinkData) {
+      // Set up the `onLink` event listener next as it may be received here
+      if (pendingDynamicLinkData != null) {
+        final Uri deepLink = pendingDynamicLinkData.link;
+        // Example of using the dynamic link to push the user to a different screen
+        debugPrint(deepLink.path.toString());
+      }
+    },
+  ).onError((error) {
+    // Handle errors
+  });
+
   // Initializing Get Storage
   await GetStorage.init();
   runApp(const MyApp());

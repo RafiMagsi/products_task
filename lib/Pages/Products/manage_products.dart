@@ -18,7 +18,7 @@ class ManageProducts extends GetView<ProductsController> {
   StatelessElement createElement() {
     // CreateElement is required to refresh data each time view appears
     // Retrieve products from storage after completion of current frame
-    WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       // Retrieve products from storage
       controller.getProducts();
     });
@@ -33,6 +33,7 @@ class ManageProducts extends GetView<ProductsController> {
         controller: controller.searchTextController,
         onChange: (value) {
           controller.searchProducts(search: value);
+          return null;
         },
       ),
       body: RefreshIndicator(
@@ -52,9 +53,10 @@ class ManageProducts extends GetView<ProductsController> {
       footer: CustomButton(
         title: "Add Product",
         onTap: () async {
-          // await Get.toNamed(AppPages.addProduct);
-          // controller.searchTextController.text = "";
-          controller.getProducts2();
+          await Get.toNamed(AppPages.addProduct)?.then((val) {
+            controller.getProducts();
+          });
+          controller.searchTextController.text = "";
         },
       ),
     );

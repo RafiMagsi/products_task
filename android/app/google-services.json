@@ -1,0 +1,158 @@
+{
+  "project_info": {
+    "project_number": "928608776543",
+    "project_id": "tib-prod-1661c",
+    "storage_bucket": "tib-prod-1661c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:928608776543:android:ea5e6e73b1fce86b6f46ea",
+        "android_client_info": {
+          "package_name": "com.altaifgroup.atexapp.iraq"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "928608776543-mi6ienrg1if4pbu66md19ep3003mnuvf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCy2U4grmypQweU9VPWWzdLw-rxXrsgDlA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "928608776543-mi6ienrg1if4pbu66md19ep3003mnuvf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "928608776543-3q7ic7qp4ucvbrbpeev5cfb9e0jq4qbs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tib.taifpayapp",
+                "app_store_id": "6448261061"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:928608776543:android:13a65d37f40308076f46ea",
+        "android_client_info": {
+          "package_name": "com.example.products_task"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "928608776543-mi6ienrg1if4pbu66md19ep3003mnuvf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCy2U4grmypQweU9VPWWzdLw-rxXrsgDlA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "928608776543-mi6ienrg1if4pbu66md19ep3003mnuvf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "928608776543-3q7ic7qp4ucvbrbpeev5cfb9e0jq4qbs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tib.taifpayapp",
+                "app_store_id": "6448261061"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:928608776543:android:59ec5125c91903e76f46ea",
+        "android_client_info": {
+          "package_name": "com.tib.companyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "928608776543-mi6ienrg1if4pbu66md19ep3003mnuvf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCy2U4grmypQweU9VPWWzdLw-rxXrsgDlA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "928608776543-mi6ienrg1if4pbu66md19ep3003mnuvf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "928608776543-3q7ic7qp4ucvbrbpeev5cfb9e0jq4qbs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tib.taifpayapp",
+                "app_store_id": "6448261061"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:928608776543:android:fbb6caec3e16c9166f46ea",
+        "android_client_info": {
+          "package_name": "com.tib.taifpayapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "928608776543-mi6ienrg1if4pbu66md19ep3003mnuvf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCy2U4grmypQweU9VPWWzdLw-rxXrsgDlA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "928608776543-mi6ienrg1if4pbu66md19ep3003mnuvf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "928608776543-3q7ic7qp4ucvbrbpeev5cfb9e0jq4qbs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tib.taifpayapp",
+                "app_store_id": "6448261061"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

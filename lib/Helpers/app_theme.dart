@@ -10,9 +10,9 @@ class AppTheme {
     return ThemeData(
       shadowColor: Colors.grey.withOpacity(0.15),
       textTheme: TextTheme(
-        bodyText2: AppStyles.titleStyle(color: AppColors.textColor).copyWith(fontSize: 14),
-        subtitle1: AppStyles.titleStyle(),
-        subtitle2: AppStyles.subTitleStyle(),
+        bodyMedium: AppStyles.titleStyle(color: AppColors.textColor).copyWith(fontSize: 14),
+        titleMedium: AppStyles.titleStyle(),
+        titleSmall: AppStyles.subTitleStyle(),
       ),
       dividerColor: Colors.transparent,
       scaffoldBackgroundColor: AppColors.primary,
@@ -21,7 +21,6 @@ class AppTheme {
       ),
       primaryColor: AppColors.buttonColor,
       brightness: Brightness.light,
-      backgroundColor: AppColors.primary,
       progressIndicatorTheme: const ProgressIndicatorThemeData(
         color: AppColors.buttonColor,
       ),
@@ -80,9 +79,9 @@ class AppTheme {
     return ThemeData(
       shadowColor: Colors.grey.withOpacity(0.025),
       textTheme: TextTheme(
-        bodyText2: AppStyles.titleStyle(color: AppColors.textColorD).copyWith(fontSize: 14),
-        subtitle1: AppStyles.titleStyle(color: AppColors.textColorD),
-        subtitle2: AppStyles.subTitleStyle(color: AppColors.textSubtitleD),
+        bodyMedium: AppStyles.titleStyle(color: AppColors.textColorD).copyWith(fontSize: 14),
+        titleMedium: AppStyles.titleStyle(color: AppColors.textColorD),
+        titleSmall: AppStyles.subTitleStyle(color: AppColors.textSubtitleD),
       ),
       dividerColor: Colors.transparent,
       scaffoldBackgroundColor: AppColors.primaryD,
@@ -91,7 +90,6 @@ class AppTheme {
       ),
       primaryColor: AppColors.buttonColor,
       brightness: Brightness.dark,
-      backgroundColor: AppColors.primaryD,
       progressIndicatorTheme: const ProgressIndicatorThemeData(
         color: AppColors.buttonColor,
       ),

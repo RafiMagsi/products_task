@@ -49,7 +49,7 @@ class AddProductController extends GetxController {
       }
 
       // Go back to Manage Products page
-      Get.back();
+      Navigator.pop(Get.context!);
       // Show Success Notification
       DialogHelper.showSnackBar("", AppStrings.productAdded);
     }

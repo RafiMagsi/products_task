@@ -34,7 +34,7 @@ class ProductItem extends StatelessWidget {
             Text(
               product!.description!,
               textAlign: TextAlign.start,
-              style: Get.theme.textTheme.subtitle2,
+              style: Get.theme.textTheme.titleSmall,
             ),
             Text(
               product!.price!.toString() + " " + AppStrings.currency,
