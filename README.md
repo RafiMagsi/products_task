@@ -1,6 +1,7 @@
-# products_task
 
-A new Flutter project.
+## Flutter Parducts App
+
+Flutter sample for listing products from API, and Bright/Dark theme setup.
 
 ## Getting Started
 
